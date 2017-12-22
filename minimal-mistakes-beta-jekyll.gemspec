@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name                    = "minimal-mistakes-beta-jekyll"
-  spec.version                 = "4.8.0.1"
+  spec.version                 = "4.8.0.2"
   spec.authors                 = ["Michael Rose, Robert Riemann"]
 
   spec.summary                 = %q{A flexible two-column Jekyll theme forked from the original minimal-mistakes with modifications for BETA. }
@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.metadata["plugin_type"] = "theme"
 
   spec.files                   = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r{^(assets|news|_(data|includes|layouts|sass)/|(404| LICENSE|README|CHANGELOG)((\.(txt|md|markdown)|$)))}i)
+    f.match(%r{^(assets|news|_(data|includes|layouts|sass)/|(404|LICENSE|README|CHANGELOG)((\.(txt|md|markdown)|$)))}i)
   end
 
   spec.add_runtime_dependency "jekyll", "~> 3.6"
