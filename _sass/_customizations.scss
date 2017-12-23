@@ -113,4 +113,33 @@ table {
   }
 }
 
+/* Put Partner Logos centered and without parts cropped off */
+.grid__partners .archive__item-teaser {
+  img {
+    object-fit: contain;
+    // taken from _archive.scss line 177
+    @include breakpoint($small) {
+      max-height: 200px;
+    }
+    @include breakpoint($medium) {
+      max-height: 120px;
+    }    
+  }
+}
 
+/* Map in archive layout full width */
+.layout--archive .archive {
+  #mapid {
+    // some spacer like under paragraphs
+    margin-bottom: 1.3em;
+    
+    /* extend grid elements to the right */
+    @include breakpoint($large) {
+      margin-right: -1 * $right-sidebar-width-narrow;
+    }
+
+    @include breakpoint($x-large) {
+      margin-right: -1 * $right-sidebar-width;
+    }
+  }
+}
