@@ -109,7 +109,7 @@ table {
 @media print {
   .page__edit {
     display: none !important;
-    height: 1px !important;    
+    height: 1px !important;
   }
 }
 
@@ -123,7 +123,7 @@ table {
     }
     @include breakpoint($medium) {
       max-height: 120px;
-    }    
+    }
   }
 }
 
@@ -132,7 +132,7 @@ table {
   #mapid {
     // some spacer like under paragraphs
     margin-bottom: 1.3em;
-    
+
     /* extend grid elements to the right */
     @include breakpoint($large) {
       margin-right: -1 * $right-sidebar-width-narrow;
