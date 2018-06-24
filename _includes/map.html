@@ -1,0 +1,30 @@
+<div id="mapid" style="height: 220px"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.1.0/leaflet.js" integrity="sha256-tjeCw1yzCBwiuZUrMPC89d0i82fR7Ij2O1OEo8cEMGw=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/esri-leaflet/2.1.0/esri-leaflet.js" integrity="sha256-0Cv64p2AGKlPdocnd4C/+dG+NSbq2zsp2ZeupUTaLng=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  var mymap = L.map('mapid');
+  // https://esri.github.io/esri-leaflet/examples/showing-a-basemap.html
+  L.esri.basemapLayer('Streets').addTo(mymap);
+  
+  {% if include.geo %}
+  mymap.setView([{{ include.geo }}], 4);
+  var marker = L.marker([{{ include.geo }}]);
+    {% if include.title %}
+    marker.addTo(mymap)
+    marker.bindPopup("<b>{{ include.title }}</b>").openPopup();  
+    {% endif %}
+  {% elsif include.geojson %}
+  document.addEventListener("DOMContentLoaded", function() {
+    $.getJSON("{{ include.geojson | absolute_url }}", function(data) {
+      var geojson = L.geoJson(data, {
+        onEachFeature: function (feature, layer) {
+          layer.bindPopup("<a href=\""+feature.properties.url + "\"><b>"+feature.properties.title+"</b></a>");
+        }
+      });
+      mymap.fitBounds(geojson.getBounds());
+      geojson.addTo(mymap);
+    });
+  });
+  {% endif %}
+</script>
