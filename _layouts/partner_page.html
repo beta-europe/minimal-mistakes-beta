@@ -27,13 +27,15 @@ layout: single
             </td>
             <td><a href="{{page.website}}">{{page.website}}</a></td>
         </tr>
-        {% if page.twitter %}
         <tr>
             <td><strong>Twitter</strong>
             </td>
-            <td><a href="https://twitter.com/{{page.twitter}}/">@{{ page.twitter }}</a></td>
+            <td>
+              {% if page.twitter %}
+              <a href="https://twitter.com/{{page.twitter}}/">@{{ page.twitter }}</a>
+              {% endif %}
+            </td>
         </tr>
-        {% endif %}
         <tr>
           <td><strong>Linkedin</strong>
           </td>
@@ -44,13 +46,16 @@ layout: single
           </td>
           <td><a href="{{page.facebook}}">{{page.facebook}}</a></td>
         </tr>
-        {% if page.instagram %}
         <tr>
             <td><strong>Instagram</strong>
             </td>
-            <td><a href="https://instagram.com/{{page.instagram}}/">{{ page.instagram }}</a></td>
+            <td>
+              {% if page.instagram %}
+              <a href="https://instagram.com/{{page.instagram}}/">{{ page.instagram }}</a>
+              {% endif %}
+            </td>
         </tr>
-        {% endif %}
+
         <tr>
             <td><strong>Members Number</strong>
             </td>
