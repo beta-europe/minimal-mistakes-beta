@@ -13,9 +13,7 @@ layout: archive
         <a ng-href="{{ ctrl.$window.forum_api + '/users/' + member.username }}">
           <img ng-src="{{ctrl.$window.forum_api+member.avatar_template.replace('{size}', '120')}}" alt="">
         </a>
-        <h3>
-          <a ng-href="{{ ctrl.$window.forum_api + '/users/' + member.username }}" rel="permalink">{{ member.name }}</a>
-        </h3>
+        <h3> {{ member.name }} </h3>
       </div>
       <div class="grid__item-excerpt grid__item-excerpt-team">
         <em>{{ member.title }}</em>
