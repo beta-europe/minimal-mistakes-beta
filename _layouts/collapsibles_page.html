@@ -20,15 +20,16 @@ layout:default
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.collapsible1 %}<meta itemprop="collapsible1" content="{{ page.collapsible1 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.collapsible2 %}<meta itemprop="collapsible2" content="{{ page.collapsible2 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.collapsible3 %}<meta itemprop="collapsible3" content="{{ page.collapsible3 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.collapsible4 %}<meta itemprop="collapsible4" content="{{ page.collapsible4 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.collapsible5 %}<meta itemprop="collapsible5" content="{{ page.collapsible5 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.collapsible6 %}<meta itemprop="collapsible6" content="{{ page.collapsible6 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.collapsible7 %}<meta itemprop="collapsible7" content="{{ page.collapsible7 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.collapsible8 %}<meta itemprop="collapsible8" content="{{ page.collapsible8 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.collapsible9 %}<meta itemprop="collapsible9" content="{{ page.collapsible9 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.collapsibletitle1 %}<meta itemprop="collapsibletitle1" content="{{ page.collapsibletitle1 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.collapsiblecontent1 %}<meta itemprop="collapsible1" content="{{ page.collapsible1 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.collapsiblecontent2 %}<meta itemprop="collapsible2" content="{{ page.collapsible2 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.collapsiblecontent3 %}<meta itemprop="collapsible3" content="{{ page.collapsible3 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.collapsiblecontent4 %}<meta itemprop="collapsible4" content="{{ page.collapsible4 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.collapsiblecontent5 %}<meta itemprop="collapsible5" content="{{ page.collapsible5 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.collapsiblecontent6 %}<meta itemprop="collapsible6" content="{{ page.collapsible6 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.collapsiblecontent7 %}<meta itemprop="collapsible7" content="{{ page.collapsible7 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.collapsiblecontent8 %}<meta itemprop="collapsible8" content="{{ page.collapsible8 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.collapsiblecontent9 %}<meta itemprop="collapsible9" content="{{ page.collapsible9 | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
 
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
     {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date: "%B %d, %Y" }}">{% endif %}
