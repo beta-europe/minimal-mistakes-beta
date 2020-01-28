@@ -1,55 +1,72 @@
 ---
 layout: archive
 ---
-{%raw-%}
-<div ng-app="TeamApp" ng-controller="TeamCtrl as ctrl">
-  <div ng-bind-html="ctrl.group_info['bio_cooked']">
-  </div>
-  <a class="btn btn--primary" ng-href="{{ctrl.group_url}}">Overview in the Forum</a>
-  <h2>Members</h2>
-  <div class="grid__wrapper">
-    <div class="grid__item" ng-repeat="member in ctrl.group_members.members">
-      <div class="grid__item-title-team">
-        <img ng-src="{{ctrl.$window.forum_api+member.avatar_template.replace('{size}', '120')}}" alt="">
-        <h3> {{ member.name }} </h3>
-      </div>
-      <div class="grid__item-excerpt grid__item-excerpt-team">
-        <em>{{ member.title }}</em>
-        <ul class="author__urls social-icons" style="z-index: 0;">
-          <li ng-if="member.location">
-            <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ member.location }}
-          </li>
-          <li ng-if="member.website">
-            <a ng-href="{{ member.website }}">
-              <i class="fa fa-fw fa-link" aria-hidden="true"></i> {{ member.website_name }}
-            </a>
-          </li>
-          <li>
-            <a ng-href="{{ ctrl.$window.forum_api + '/new-message/?username=' + member.username }}">
-              <i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Contact
-            </a>
-          </li>
-          <li ng-if="member.twitter">
-            <a ng-href="{{'https://twitter.com/' + member.twitter}}">
-              <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
-            </a>
-          </li>
-          <li ng-if="member.linkedin">
-            <a ng-href="{{member.linkedin }}">
-              <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
-            </a>
-          </li>
-          <li ng-if="member.facebook">
-            <a ng-href="{{member.facebook }}">
-              <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-{%endraw-%}
+{{ content }}
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Organisation Name</strong>
+            </td>
+            <td>{{ page.title }}</td>
+        </tr>
+        <tr>
+            <td><strong>Mail</strong>
+            </td>
+            <td><a href="mailto:{{ page.mail }}">{{ page.mail }}</a></td>
+        </tr>
+        <tr>
+            <td><strong>Website</strong>
+            </td>
+            <td><a href="{{page.website}}">{{page.website}}</a></td>
+        </tr>
+        <tr>
+            <td><strong>Twitter</strong>
+            </td>
+            <td>
+              {% if page.twitter %}
+              <a href="https://twitter.com/{{page.twitter}}/">@{{ page.twitter }}</a>
+              {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Linkedin</strong>
+            </td>
+            <td><a href="{{page.linkedin}}">{{page.linkedin}}</a></td>
+        </tr>
+        <tr>
+            <td><strong>Facebook</strong>
+            </td>
+            <td><a href="{{page.facebook}}">{{page.facebook}}</a></td>
+        </tr>
+        <tr>
+            <td><strong>Instagram</strong>
+            </td>
+            <td>
+              {% if page.instagram %}
+              <a href="https://instagram.com/{{page.instagram}}/">{{ page.instagram }}</a>
+              {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Members Number</strong>
+            </td>
+            <td>{{ page.members }}</td>
+        </tr>
+        <tr>
+            <td><strong>Location</strong>
+            </td>
+            <td>{{ page.country }}, {{ page.town }}{% if page.location %}, {{ page.location }}{% endif %}</td>
+        </tr>
+    </tbody>
+</table>
+
 
 <!--
 <div class="cf" />
