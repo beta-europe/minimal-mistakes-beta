@@ -7,12 +7,11 @@ layout: archive
     <thead>
         <tr>
             <th>Name</th>
-            <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td><strong>Organisation Name</strong>
+            <td><strong>Title</strong>
             </td>
             <td>{{ page.title }}</td>
         </tr>
@@ -22,43 +21,11 @@ layout: archive
             <td><a href="mailto:{{ page.mail }}">{{ page.mail }}</a></td>
         </tr>
         <tr>
-            <td><strong>Website</strong>
-            </td>
-            <td><a href="{{page.website}}">{{page.website}}</a></td>
-        </tr>
-        <tr>
-            <td><strong>Twitter</strong>
-            </td>
-            <td>
-              {% if page.twitter %}
-              <a href="https://twitter.com/{{page.twitter}}/">@{{ page.twitter }}</a>
-              {% endif %}
-            </td>
-        </tr>
-        <tr>
             <td><strong>Linkedin</strong>
             </td>
             <td><a href="{{page.linkedin}}">{{page.linkedin}}</a></td>
         </tr>
         <tr>
-            <td><strong>Facebook</strong>
-            </td>
-            <td><a href="{{page.facebook}}">{{page.facebook}}</a></td>
-        </tr>
-        <tr>
-            <td><strong>Instagram</strong>
-            </td>
-            <td>
-              {% if page.instagram %}
-              <a href="https://instagram.com/{{page.instagram}}/">{{ page.instagram }}</a>
-              {% endif %}
-            </td>
-        </tr>
-        <tr>
-            <td><strong>Members Number</strong>
-            </td>
-            <td>{{ page.members }}</td>
-        </tr>
         <tr>
             <td><strong>Location</strong>
             </td>
