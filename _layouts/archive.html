@@ -20,10 +20,10 @@ layout: default
   <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
       <h1 id="page-title" class="page__title">{{ page.title }}</h1>
+    {% endunless %}
     {% if page.function %}
       <h1 id="page-function" class="page__function">{{ page.function }}</h1>
     {% endif %}
-    {% endunless %}
     {{ content }}
   </div>
 </div>
