@@ -6,8 +6,10 @@
 
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+  {% assign mail = post.mail | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
   {% assign title = post.title %}
+  {% assign mail = post.mail %}
 {% endif %}
 
 
@@ -32,10 +34,10 @@
       {% endif %}
     </h2>
     {% if post.function %}<p class="archive__item-excerpt" itemprop="description">{{ post.function | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+    {% if post.mail %}
     <p class="archive__item-mail" itemprop="mail">{{ post.mail | markdownify | strip_html }}
-      {% if post.mail %}
         <a href="{{ post.mail }}">{{ mail }}</a> <a href="{{ post.mail }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% endif %}
     </p>
+    {% endif %}
   </article>
 </div>
