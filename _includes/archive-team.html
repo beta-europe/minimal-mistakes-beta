@@ -6,7 +6,7 @@
 
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
-  {% assign mail = post.mail | markdownify | remove: "<p>" | remove: "</p>" | remove "mailto:" %}
+  {% assign mail = post.mail | markdownify | remove: "<p>" | remove: "</p>" | remove: "mailto:" %}
 {% else %}
   {% assign title = post.title %}
   {% assign mail = post.mail %}
