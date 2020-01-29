@@ -10,6 +10,10 @@
   {% assign title = post.title %}
 {% endif %}
 
+{% if post.function %}
+  {% assign function = post.function | markdownify | remove: "<p>" | remove: "</p>" %}
+{% endif %}
+
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
@@ -30,6 +34,8 @@
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
+    <h3 class="archive__item-function">
+    </h3>
     {% if post.read_time %}
       <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
