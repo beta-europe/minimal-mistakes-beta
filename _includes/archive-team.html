@@ -32,9 +32,9 @@
       {% endif %}
     </h2>
     {% if post.function %}<p class="archive__item-excerpt" itemprop="description">{{ post.function | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
-    <p class="archive__item-mail" itemprop="mail">
+    <p class="archive__item-mail" itemprop="mail">{{ post.mail | markdownify | strip_html }}
       {% if post.mail %}
-        <a href="{{ post.mail }}">{{ mail }}</a> <a href="{{ post.mail | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        <a href="{{ post.mail }}">{{ mail }}</a> <a href="{{ post.mail }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       {% endif %}
     </p>
   </article>
