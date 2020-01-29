@@ -7,9 +7,11 @@
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
   {% assign mail = post.mail | markdownify | remove: "<p>" | remove: "</p>" | remove: "mailto:" %}
+  {% assign function = post.function | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
   {% assign title = post.title %}
   {% assign mail = post.mail %}
+  {% assign function = post.function %}
 {% endif %}
 
 
@@ -33,7 +35,7 @@
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
-    {% if post.function %}<h4 class="archive__item-excerpt" itemprop="subtitle">{{ post.function }}</h4>{% endif %}
+    {% if post.function %}<h4 class="archive__item-subtitle" itemprop="subtitle">{{ function }}</h4>{% endif %}
     {% if post.mail %}
     <p class="archive__item-mail" itemprop="mail">
         <a href="{{ post.mail }}">{{ mail }}</a> <a href="{{ post.mail }}" rel="permalink"><i class="fas fa-fw fa-envelope-square" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
