@@ -9,7 +9,7 @@
   {% assign mail = post.mail | markdownify | remove: "<p>" | remove: "</p>" | remove "mailto:" %}
 {% else %}
   {% assign title = post.title %}
-  {% assign mail = post.mail | remove "mailto:" %}
+  {% assign mail = post.mail %}
 {% endif %}
 
 
