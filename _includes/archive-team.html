@@ -36,7 +36,7 @@
     {% if post.function %}<p class="archive__item-excerpt" itemprop="description">{{ post.function | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
     {% if post.mail %}
     <p class="archive__item-mail" itemprop="mail">
-        <a href="{{ post.mail }}">{{ mail }}</a> <a href="{{ post.mail }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        <a href="{{ post.mail }}">{{ mail }}</a> <a href="{{ post.mail }}" rel="permalink"><i class="fas fa-fw fa-envelope-square" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
     </p>
     {% endif %}
   </article>
